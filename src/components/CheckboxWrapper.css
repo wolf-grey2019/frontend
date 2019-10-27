@@ -1,0 +1,8 @@
+Div.checkbox-wrapper {
+	background-color: rgb(221, 230, 185);
+	width: 300px;
+	padding: 20px;
+	margin: 20px;
+	border-radius: 15px;
+	border: 2px solid rgba(85, 159, 172, 0.575);
+}
