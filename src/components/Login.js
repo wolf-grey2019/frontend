@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios.post(
-      'https://backend-sequelize.herokuapp.com:3306/login',
+      'https://backend-sequelize.herokuapp.com/login',
       {
         username, password
       }

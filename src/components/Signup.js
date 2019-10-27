@@ -17,7 +17,7 @@ const Signup = () => {
       return;
     }
     axios.post(
-      'https://backend-sequelize.herokuapp.com:3306/signup',
+      'https://backend-sequelize.herokuapp.com/signup',
       {
         username, email, password
       }
