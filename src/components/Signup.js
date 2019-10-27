@@ -16,14 +16,18 @@ const Signup = () => {
     if (username.length === 0 || email.length === 0 || password.length === 0) {
       return;
     }
-    axios.post('http://localhost:3000/signup', { username, email, password })
-      .then(response => {
-        localStorage.setItem('token', response.data.token);
-        console.log(response.data.users);
-        setShow(false);
-      }).catch(reject => {
-        console.log(reject);
-      });
+    axios.post(
+      'https://backend-sequelize.herokuapp.com/signup',
+      {
+        username, email, password
+      }
+    ).then(response => {
+      localStorage.setItem('token', response.data.token);
+      console.log(response.data.users);
+      setShow(false);
+    }).catch(reject => {
+      console.log(reject);
+    });
   }
 
   return (
@@ -34,30 +38,30 @@ const Signup = () => {
         </Modal.Header>
         <Modal.Body>
           <p>
-            UserName: 
-            <input 
-              type="text" 
-              name={username} 
-              onChange={e => setUsername(e.target.value)} 
-            /> 
+            UserName:
+            <input
+              type="text"
+              name={username}
+              onChange={e => setUsername(e.target.value)}
+            />
             <br />
           </p>
           <p>
-            Email: 
-            <input 
-              type="email" 
-              name={email} 
+            Email:
+            <input
+              type="email"
+              name={email}
               onChange={e => setEmail(e.target.value)}
-            /> 
+            />
             <br />
           </p>
           <p>
-            Password: 
-            <input 
-              type="password" 
-              password={password} 
+            Password:
+            <input
+              type="password"
+              password={password}
               onChange={e => setPassword(e.target.value)}
-            /> 
+            />
             <br />
           </p>
         </Modal.Body>
