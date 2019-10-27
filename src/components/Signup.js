@@ -16,7 +16,7 @@ const Signup = () => {
     if (username.length === 0 || email.length === 0 || password.length === 0) {
       return;
     }
-    axios.post('http://localhost:3000/signup', { username, email, password })
+    axios.post('http://localhost:5000/signup', { username, email, password })
       .then(response => {
         localStorage.setItem('token', response.data.token);
         console.log(response.data.users);
